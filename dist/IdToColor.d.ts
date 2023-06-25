@@ -11,7 +11,7 @@
  * const id = 'unique-id-1'
  * const colors = new IdToColor.get(id)
  */
-export default class IdToColor {
+export declare class IdToColor {
     private maxP;
     private pallete?;
     private palleteSize?;

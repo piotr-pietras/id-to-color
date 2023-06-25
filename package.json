@@ -1,6 +1,15 @@
 {
   "name": "id-to-color",
-  "version": "0.0.0",
+  "keywords": [
+    "IdToColor",
+    "id to color",
+    "unique color for an id"
+  ],
+  "author": {
+    "name": "peterooo94",
+    "url": "https://github.com/piotr-pietras"
+  },
+  "version": "1.0.0",
   "main": "./dist/IdToColor.js",
   "types": "./dist/IdToColor.d.ts",
   "scripts": {

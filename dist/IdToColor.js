@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.IdToColor = void 0;
 const sha256_1 = require("@noble/hashes/sha256");
 const utils_1 = require("@noble/hashes/utils");
 /**
@@ -54,4 +55,4 @@ class IdToColor {
         return this.noPalleteColor(id);
     }
 }
-exports.default = IdToColor;
+exports.IdToColor = IdToColor;

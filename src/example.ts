@@ -1,4 +1,4 @@
-import IdToColor from "./IdToColor";
+import { IdToColor } from "./IdToColor";
 import pallate from "./example.pallete.json";
 
 let inputId = "user";

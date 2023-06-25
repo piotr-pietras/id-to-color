@@ -14,7 +14,7 @@ import { bytesToHex } from "@noble/hashes/utils";
  * const id = 'unique-id-1'
  * const colors = new IdToColor.get(id)
  */
-export default class IdToColor {
+export class IdToColor {
   private maxP = 65536;
   private pallete?: string[];
   private palleteSize?: number;
