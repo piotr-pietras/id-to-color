@@ -1,7 +1,7 @@
 ## IdToColor 
 A small library that assigns unique **color** for a unique **id**. It hashes id with sha256 to find 3 bytes that describe hex color. 
-Example: *https://piotr-pietras.github.io/id-to-color/example/*
-Source code: *https://github.com/piotr-pietras/id-to-color*
+- Example: *https://piotr-pietras.github.io/id-to-color/example/*
+- Source code: *https://github.com/piotr-pietras/id-to-color*
 
 ### Usage 
 - You may assign any possible color. 
