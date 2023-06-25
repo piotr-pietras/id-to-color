@@ -1,5 +1,6 @@
 {
   "name": "id-to-color",
+  "version": "0.0.0",
   "main": "./dist/IdToColor.js",
   "types": "./dist/IdToColor.d.ts",
   "scripts": {
