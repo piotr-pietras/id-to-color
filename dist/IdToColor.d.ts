@@ -5,11 +5,11 @@
  * @example "with pallete"
  * const pallate = ["#D0F0C0","#F88379","#F4C2C2"]
  * const id = 'unique-id-1'
- * const color = new IdToColor.setPallate(pallete).get(id)
+ * const colors = new IdToColor.setPallate(pallete).get(id)
  *
  * @example "without pallete"
  * const id = 'unique-id-1'
- * const color = new IdToColor.get(id)
+ * const colors = new IdToColor.get(id)
  */
 export default class IdToColor {
     private maxP;
@@ -25,5 +25,10 @@ export default class IdToColor {
      * @param pallete
      */
     setPallete(pallete: string[]): this;
+    /**
+     * Gets unique color for an id.
+     * @param id
+     * @returns
+     */
     get(id: string): string;
 }

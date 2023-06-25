@@ -42,6 +42,11 @@ class IdToColor {
         this.palleteSize = pallete.length;
         return this;
     }
+    /**
+     * Gets unique color for an id.
+     * @param id
+     * @returns
+     */
     get(id) {
         if (this.palleteSize) {
             return this.palleteColor(id);

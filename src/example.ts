@@ -1,22 +1,58 @@
 import IdToColor from "./IdToColor";
 import pallate from "./example.pallete.json";
 
-const container = document.querySelector("#container");
-const button = document.querySelector("#restart");
+let inputId = "user";
 
-const createBox = (color: string, id: string) => {
+const container = document.querySelector("#container");
+
+const input = document.querySelector("#input") as HTMLInputElement;
+input.value = inputId;
+input?.addEventListener("change", (e) => {
+  inputId = (e.target as HTMLInputElement).value;
+});
+
+const button = document.querySelector("#restart");
+button?.addEventListener("click", () => {
+  restart();
+});
+
+const createBox = (color: string) => {
   const box = document.createElement("div");
   box.style.height = "50px";
   box.style.width = "50px";
   box.style.backgroundColor = color;
-  box.style.wordBreak = "break-all";
-  box.style.textAlign = "center";
-  box.innerHTML = id.slice(2, 6);
   return box;
 };
 
-for (let i = 1; i < 1000; i++) {
-  const id = Math.random().toString();
-  const color = new IdToColor().setPallete(pallate).get(id);
-  container && container.appendChild(createBox(color, id));
-}
+const createEntry = (color: string, id: string) => {
+  const entry = document.createElement("div");
+  entry.style.display = "flex";
+  entry.style.alignItems = "center";
+  entry.style.gap = "10px";
+
+  const label = document.createElement("div");
+  label.innerText = id;
+  entry.appendChild(label);
+
+  const box = createBox(color);
+  entry.appendChild(box);
+
+  return entry;
+};
+
+const populate = () => {
+  for (let i = 1; i < 1000 - 99; i++) {
+    const id = `${inputId}-${i + 99}`;
+    const color = new IdToColor().setPallete(pallate).get(id);
+    container && container.appendChild(createEntry(color, id));
+  }
+};
+
+const restart = () => {
+  while (container?.firstChild) {
+    container.removeChild(container.lastChild!);
+  }
+  populate();
+};
+
+populate();
