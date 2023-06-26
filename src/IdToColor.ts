@@ -41,7 +41,7 @@ export class IdToColor {
    */
   public setPallete(pallete: string[]) {
     this.pallete = pallete;
-    this.palleteSize = pallete.length;
+    this.palleteSize = pallete.length - 1;
     return this;
   }
 
