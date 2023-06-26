@@ -10,6 +10,10 @@
     "name": "peterooo94",
     "url": "https://github.com/piotr-pietras"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/piotr-pietras/id-to-color"
+  },
   "version": "1.0.0",
   "main": "./dist/IdToColor.js",
   "types": "./dist/IdToColor.d.ts",
