@@ -3,3 +3,4 @@ example
 src
 tsconfig.example.json
 webpack.example.config.js
+Makefile
