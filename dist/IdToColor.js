@@ -20,8 +20,8 @@ export class IdToColor {
     paletteColor(id) {
         const idH = bytesToHex(sha256(id));
         const idP = parseInt(idH.slice(0, 4), 16);
-        const p = (idP / this.maxP) * this.paletteSize;
-        const index = Math.round(p);
+        const p = (idP / this.maxP) * (this.palette?.length - 0.000001);
+        const index = parseInt(p.toString());
         return this.palette[index];
     }
     noPaletteColor(id) {
@@ -37,7 +37,6 @@ export class IdToColor {
      */
     setPalette(palette) {
         this.palette = palette;
-        this.paletteSize = palette.length - 1;
         return this;
     }
     /**
@@ -46,7 +45,7 @@ export class IdToColor {
      * @returns
      */
     get(id) {
-        if (this.paletteSize) {
+        if (this.palette?.length) {
             return this.paletteColor(id);
         }
         return this.noPaletteColor(id);

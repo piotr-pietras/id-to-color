@@ -17,13 +17,12 @@ import { bytesToHex } from "@noble/hashes/utils";
 export class IdToColor {
   private maxP = 65536;
   private palette?: string[];
-  private paletteSize?: number;
 
   private paletteColor(id: string) {
     const idH = bytesToHex(sha256(id));
     const idP = parseInt(idH.slice(0, 4), 16);
-    const p = (idP / this.maxP) * this.paletteSize!;
-    const index = Math.round(p);
+    const p = (idP / this.maxP) * (this.palette?.length! - 0.000001);
+    const index = parseInt(p.toString());
     return this.palette![index];
   }
 
@@ -41,7 +40,6 @@ export class IdToColor {
    */
   public setPalette(palette: string[]) {
     this.palette = palette;
-    this.paletteSize = palette.length - 1;
     return this;
   }
 
@@ -51,7 +49,7 @@ export class IdToColor {
    * @returns
    */
   public get(id: string) {
-    if (this.paletteSize) {
+    if (this.palette?.length) {
       return this.paletteColor(id);
     }
     return this.noPaletteColor(id);

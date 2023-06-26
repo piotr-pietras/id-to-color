@@ -14,7 +14,6 @@
 export declare class IdToColor {
     private maxP;
     private palette?;
-    private paletteSize?;
     private paletteColor;
     private noPaletteColor;
     /**
