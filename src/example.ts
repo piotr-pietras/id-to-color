@@ -1,5 +1,5 @@
 import { IdToColor } from "./IdToColor";
-import pallate from "./example.pallete.json";
+import palatte from "./example.palette.json";
 
 let inputId = "user";
 
@@ -43,7 +43,7 @@ const createEntry = (color: string, id: string) => {
 const populate = () => {
   for (let i = 1; i < 1000 - 99; i++) {
     const id = `${inputId}-${i + 99}`;
-    const color = new IdToColor().setPallete(pallate).get(id);
+    const color = new IdToColor().setPalette(palatte).get(id);
     container && container.appendChild(createEntry(color, id));
   }
 };
