@@ -19,12 +19,12 @@ const assignedColors = ids.map((id) => colore.get(id))
 
 console.log(assignedColors) //["#c6c289",  "#d92b69", "#92303a"]
 ```
-- You may narrow down possible colors by adding your own palette. Pallete is an array of colors in hex format.
+- You may narrow down possible colors by adding your own palette. Palette is an array of colors in hex format.
 ```js script
 import { IdToColor } from "IdToColor"
 
-const pallete = ["#25283d", "#8f3985", "#98dfea", "#07beb8" (...)]
-const color = new IdToColor().setPallete(pallete);
+const palette = ["#25283d", "#8f3985", "#98dfea", "#07beb8" (...)]
+const color = new IdToColor().setPalette(palette);
 const ids = ["user-1", "user-2", "user-3"];
 const assignedColors = ids.map((id) => colore.get(id))
 
