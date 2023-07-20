@@ -1,5 +1,4 @@
-import { sha256 } from "@noble/hashes/sha256";
-import { bytesToHex } from "@noble/hashes/utils";
+import { crc32 } from "./crc32";
 /**
  * Finds unique color for an string id.
  * By setting palette you may limit number of possible colors
@@ -18,14 +17,14 @@ export class IdToColor {
         this.maxP = 65536;
     }
     paletteColor(id) {
-        const idH = bytesToHex(sha256(id));
+        const idH = crc32(id);
         const idP = parseInt(idH.slice(0, 4), 16);
         const p = (idP / this.maxP) * (this.palette?.length - 0.000001);
         const index = parseInt(p.toString());
         return this.palette[index];
     }
     noPaletteColor(id) {
-        const idH = bytesToHex(sha256(id));
+        const idH = crc32(id);
         return `#${idH.slice(0, 6)}`;
     }
     /**

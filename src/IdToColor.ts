@@ -1,5 +1,4 @@
-import { sha256 } from "@noble/hashes/sha256";
-import { bytesToHex } from "@noble/hashes/utils";
+import { crc32 } from "./crc32";
 
 /**
  * Finds unique color for an string id.
@@ -19,7 +18,7 @@ export class IdToColor {
   private palette?: string[];
 
   private paletteColor(id: string) {
-    const idH = bytesToHex(sha256(id));
+    const idH = crc32(id);
     const idP = parseInt(idH.slice(0, 4), 16);
     const p = (idP / this.maxP) * (this.palette?.length! - 0.000001);
     const index = parseInt(p.toString());
@@ -27,7 +26,7 @@ export class IdToColor {
   }
 
   private noPaletteColor(id: string) {
-    const idH = bytesToHex(sha256(id));
+    const idH = crc32(id);
     return `#${idH.slice(0, 6)}`;
   }
 
