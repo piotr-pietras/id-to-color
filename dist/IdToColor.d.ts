@@ -1,21 +1,10 @@
-/**
- * Finds unique color for an string id.
- * By setting palette you may limit number of possible colors
- *
- * @example "with palette"
- * const palatte = ["#D0F0C0","#F88379","#F4C2C2"]
- * const id = 'unique-id-1'
- * const colors = new IdToColor.setPalatte(palette).get(id)
- *
- * @example "without palette"
- * const id = 'unique-id-1'
- * const colors = new IdToColor.get(id)
- */
 export declare class IdToColor {
     private maxP;
     private palette?;
+    private manipulation;
     private paletteColor;
     private noPaletteColor;
+    private manipulate;
     /**
      * Palette is a array of colors encoded in hex.
      *
@@ -27,7 +16,41 @@ export declare class IdToColor {
     /**
      * Gets unique color for an id.
      * @param id
-     * @returns
      */
     get(id: string): string;
+    /**
+     * Lighten all colors
+     * @param value
+     */
+    lighten(v: number): this;
+    /**
+     * Darken all colors
+     * @param value
+     */
+    darken(v: number): this;
+    /**
+     * Add lightness to all colors
+     * @param value
+     */
+    lightness(v: number): this;
+    /**
+     * Saturate all colors
+     * @param value
+     */
+    saturate(v: number): this;
+    /**
+     * Desaturate all colors
+     * @param value
+     */
+    desaturate(v: number): this;
+    /**
+     * Whiten all colors
+     * @param value
+     */
+    whiten(v: number): this;
+    /**
+     * Blacken all colors
+     * @param value
+     */
+    blacken(v: number): this;
 }
